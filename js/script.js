@@ -93,5 +93,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     changeScreen (m, n, o, p)
 
-    var changeScreenTimer = setInterval(whichScreen, 5000);
+    setInterval(whichScreen, 5000);
 });

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/favicon.ico" /> -->
-    <link rel="icon" type="image/png" href="https://imgs.pnvnet.si/img/30/30/75/1/c/www.metrel.si/images/metrel_pin.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/favicon.ico" />
+    <!-- <link rel="icon" type="image/png" href="https://imgs.pnvnet.si/img/30/30/75/1/c/www.metrel.si/images/metrel_pin.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://imgs.pnvnet.si/img/57/57/75/1/c/www.metrel.si/images/metrel_pin.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="https://imgs.pnvnet.si/img/72/72/75/1/c/www.metrel.si/images/metrel_pin.png" />
-    <title>Landing page</title>
-    <meta name="description" content="Landing page"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="https://imgs.pnvnet.si/img/72/72/75/1/c/www.metrel.si/images/metrel_pin.png" /> -->
+    <title>METREL | Power Quality Analysis</title>
+    <meta name="description" content="Metrel d.d."/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,700italic&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/form.css" />
 </head>
 <body>
     <div class="site">
-        <header id="header">
-            <img id="header-hero" src="./assets/images/power-analysers.jpg" alt="metrel power quality analysers" />
+        <header id="header" class="parallax-container" data-parallax="scroll"
+            data-image-src="./assets/images/power-analysers.jpg">
+            <img id="header-hero" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
         </header>
+
+        <!-- <div class="" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="./img/helix-nebula-1400x1400.jpg" data-natural-width="1400" data-natural-height="1400"></div> -->
         <main>
             <!-- 1 -->
             <section class="bg-blue bg-blue--intro">
@@ -68,7 +71,7 @@
                         <h2><span class="uppercase">features abound</span></h2>
                         <div class="divider bg-blue"></div>
                     </div>
-                    <div class="animated-image-container">
+                    <div id="animated-image-container" class="animated-image-container">
                         <div class="image-container">
                             <img src="./assets/images/analyser-features.jpg" alt="power analyser features" />
                         </div>
@@ -304,6 +307,9 @@
             </div>
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/parallax.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>

@@ -522,13 +522,10 @@ p {
   text-transform: uppercase;
 }
 
-header {
+.parallax-mirror {
   background-color: #000;
-  background-image: url("../assets/images/power-analysers.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
 }
+
 header img {
   display: block;
   max-height: 100vh;

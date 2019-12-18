@@ -16,12 +16,10 @@
 </head>
 <body>
     <div class="site">
-        <header id="header" class="parallax-container" data-parallax="scroll"
+        <header id="header" class="parallax-container" data-parallax="scroll" data-speed="0.5"
             data-image-src="./assets/images/power-analysers.jpg">
             <img id="header-hero" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
         </header>
-
-        <!-- <div class="" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="./img/helix-nebula-1400x1400.jpg" data-natural-width="1400" data-natural-height="1400"></div> -->
         <main>
             <!-- 1 -->
             <section class="bg-blue bg-blue--intro">
@@ -41,12 +39,12 @@
             <section class="bg-white bg-white--accurate-safe">
                 <div class="text-container">
                     <div class="header header--mobile">
-                        <h2><span class="uppercase">accurate &amp; safe to a fault</span></h2>
+                        <h2><span class="uppercase">accurate &amp; safe</span></h2>
                         <div class="divider bg-blue"></div>
                     </div>
                     <div class="left">
                         <div class="header header--desktop">
-                            <h2><span class="uppercase">accurate &amp; safe to a fault</span></h2>
+                            <h2><span class="uppercase">accurate &amp; safe</span></h2>
                             <div class="divider bg-blue"></div>
                         </div>
                         <div class="image-container image-container--mobile">
@@ -65,15 +63,64 @@
                 </div>
             </section>
             <!-- 3 -->
-            <section class="bg-black bg-black--features">
+            <section class="bg-black bg-black--features features--mobile">
                 <div class="text-container">
                     <div class="header">
                         <h2><span class="uppercase">features abound</span></h2>
                         <div class="divider bg-blue"></div>
                     </div>
-                    <div id="animated-image-container" class="animated-image-container">
-                        <div class="image-container">
-                            <img src="./assets/images/analyser-features.jpg" alt="power analyser features" />
+                    <div id="scroll-animation-container--mobile" class="scroll-animation">
+                        <div class="scroll-animation-container__inner">
+                            <img class="analyser-features" src="./assets/images/analyser-features-mobile.jpg" alt="power analyser features" />
+                        </div>
+                        <div class="label-container label-container--left">
+                            <img class="n n-1" src="./assets/icons/one-black.png" alt="1 icon" />
+                            <img class="n n-2" src="./assets/icons/two-black.png" alt="2 icon" />
+                            <img class="n n-3" src="./assets/icons/three-black.png" alt="3 icon" />
+                            <img class="n n-4" src="./assets/icons/four-black.png" alt="4 icon" />
+                            <img class="n n-5" src="./assets/icons/five-black.png" alt="5 icon" />
+                            <img class="n n-6" src="./assets/icons/six-black.png" alt="6 icon" />
+                            <img class="n n-9" src="./assets/icons/nine-black.png" alt="9 icon" />
+                        </div><div class="label-container label-container--right">
+                            <img class="n n-7" src="./assets/icons/seven-black.png" alt="7 icon" />
+                            <img class="n n-8" src="./assets/icons/eight-black.png" alt="8 icon" />
+                        </div>
+                    </div>
+                    <div class="animated-ul-container">
+                        <ul class="iconed">
+                            <li class="numbered"><img src="./assets/icons/one-white.png" alt="checkmark icon" /><span>Rugged case</span></li>
+                            <li class="numbered"><img src="./assets/icons/two-white.png" alt="checkmark icon" /><span>Easily accessible terminals</span></li>
+                            <li class="numbered"><img src="./assets/icons/three-white.png" alt="checkmark icon" /><span>Phase diagram</span></li>
+                            <li class="numbered"><img src="./assets/icons/four-white.png" alt="checkmark icon" /><span>(Inter)harmonic analysis</span></li>
+                            <li class="numbered"><img src="./assets/icons/five-white.png" alt="checkmark icon" /><span>Flicker measurement</span></li>
+                            <li class="numbered"><img src="./assets/icons/six-white.png" alt="checkmark icon" /><span>Transient recording</span></li>
+                            <li class="numbered"><img src="./assets/icons/seven-white.png" alt="checkmark icon" /><span>Scope function</span></li>
+                            <li class="numbered"><img src="./assets/icons/eight-white.png" alt="checkmark icon" /><span>Colour coding</span></li>
+                            <li class="numbered"><img src="./assets/icons/nine-white.png" alt="checkmark icon" /><span>Intuitive keypad</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-black bg-black--features features--desktop">
+                <div class="text-container">
+                    <div class="header">
+                        <h2><span class="uppercase">features abound</span></h2>
+                        <div class="divider bg-blue"></div>
+                    </div>
+                    <div id="scroll-animation-container" class="scroll-animation">
+                        <div class="scroll-animation-container__inner">
+                            <img class="analyser-features" src="./assets/images/analyser-features-desktop.png" alt="power analyser features" />
+                        </div>
+                        <div class="label-container">
+                            <img class="label" src="./assets/images/features-label2.png" alt="easily accessible terminals" />
+                            <img class="label" src="./assets/images/features-label1.png" alt="rugged case" />
+                            <img class="label" src="./assets/images/features-label3.png" alt="phase diagram" />
+                            <img class="label" src="./assets/images/features-label4.png" alt="(inter)harmonic analysis" />
+                            <img class="label" src="./assets/images/features-label5.png" alt="flicker measurement" />
+                            <img class="label" src="./assets/images/features-label8.png" alt="colour coding" />
+                            <img class="label" src="./assets/images/features-label7.png" alt="scope function" />
+                            <img class="label" src="./assets/images/features-label6.png" alt="transient recording" />
+                            <img class="label" src="./assets/images/features-label9.png" alt="intuitive keypad" />
                         </div>
                     </div>
                 </div>
@@ -272,25 +319,25 @@
                                         <div class="ml-form-formContent">
                                             <div class="ml-form-fieldRow">
                                                 <div class="ml-field-group ml-field-namr">
-                                                    <input type="text" class="form-control" data-inputmask="" 
+                                                    <input type="text" class="form-control" data-inputmask=""
                                                         name="fields[name]" value="" placeholder="Name...">
                                                 </div>
                                             </div>
                                             <div class="ml-form-fieldRow">
                                                 <div class="ml-field-group ml-field-company">
-                                                    <input type="text" class="form-control" data-inputmask="" 
+                                                    <input type="text" class="form-control" data-inputmask=""
                                                         name="fields[company]" value="" placeholder="Company...">
                                                 </div>
                                             </div>
                                             <div class="ml-form-fieldRow">
                                                 <div class="ml-field-group ml-field-email">
-                                                    <input type="email" class="form-control" data-inputmask="" 
+                                                    <input type="email" class="form-control" data-inputmask=""
                                                         name="fields[email]" value="" placeholder="E-mail...">
                                                 </div>
                                             </div>
                                             <div class="ml-form-fieldRow ml-last-item">
                                                 <div class="ml-field-group ml-field-phoned">
-                                                    <input type="text" class="form-control" data-inputmask="" 
+                                                    <input type="text" class="form-control" data-inputmask=""
                                                         name="fields[phone]" value="" placeholder="Telephone number...">
                                                 </div>
                                             </div>

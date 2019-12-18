@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/favicon.ico" /> -->
-    <link rel="icon" type="image/png" href="https://imgs.pnvnet.si/img/30/30/75/1/c/www.metrel.si/images/metrel_pin.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/icons/favicon.ico" />
+    <!-- <link rel="icon" type="image/png" href="https://imgs.pnvnet.si/img/30/30/75/1/c/www.metrel.si/images/metrel_pin.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://imgs.pnvnet.si/img/57/57/75/1/c/www.metrel.si/images/metrel_pin.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="https://imgs.pnvnet.si/img/72/72/75/1/c/www.metrel.si/images/metrel_pin.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://imgs.pnvnet.si/img/72/72/75/1/c/www.metrel.si/images/metrel_pin.png" /> -->
     <title>METREL | Power Quality Analysis</title>
-    <meta name="description" content="Metrel d.d."/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,700italic&display=swap" rel="stylesheet" />
+    <meta name="description" content="Metrel is an international Group and an expert in the research, development and production of testing and measurement equipment. Metrel is recognized worldwide and associated with high quality testing and measurement." />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,700italic&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/form.css" />
 </head>
@@ -21,7 +21,6 @@
             <img id="header-hero" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
         </header>
         <main>
-            <!-- 1 -->
             <section class="bg-blue bg-blue--intro">
                 <div class="text-container">
                     <div class="header">
@@ -34,8 +33,33 @@
                         </p>
                     </div>
                 </div>
+                <div id="non-sticky-button" class="bg-blue sticky-button">
+                    <div class="text-container">
+                        <div class="left">
+                            <p>Compare this product with others in Product Finder</p>
+                        </div><div class="right">
+                            <div class="button-container">
+                                <a href="#form">
+                                    <span id="button" class="button nowrap">call to action</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <!-- 2 -->
+            <div id="sticky-button" class="bg-blue sticky-button">
+                <div class="text-container">
+                    <div class="left">
+                        <p>Compare this product with others in Product Finder</p>
+                    </div><div class="right">
+                        <div class="button-container">
+                            <a href="#form">
+                                <span class="button nowrap">call to action</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <section class="bg-white bg-white--accurate-safe">
                 <div class="text-container">
                     <div class="header header--mobile">
@@ -296,7 +320,7 @@
                 </div>
             </section>
         </main>
-        <footer class="bg-blue">
+        <footer id="footer" class="bg-blue">
             <div class="text-container">
                 <div class="header header--mobile">
                     <h2><span class="uppercase">we’re here to help</span></h2>
@@ -315,7 +339,7 @@
                         <div class="ml-form-align-center">
                             <div class="ml-form-embedWrapper embedForm">
                                 <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                    <form class="ml-block-form">
+                                    <form id="form" class="ml-block-form">
                                         <div class="ml-form-formContent">
                                             <div class="ml-form-fieldRow">
                                                 <div class="ml-field-group ml-field-namr">
@@ -353,6 +377,17 @@
                 </div>
             </div>
         </footer>
+    </div>
+    <div id="cookies-notice-container">
+        <div class="text-container">
+            <a class="close" onclick="closeCookieNotification()">X</a>
+            <h3 class="text--blue">Cookies and privacy</h3>
+            <p>We use cookies on this web page, so that we can offer you a better user experience. By clicking on "I agree", these cookies will be installed in your browser.</p>
+            <div class="button-container">
+                <a class="moreLink" href="https://www.metrel.si/en/cookies.html" target="_blank"><span class="button">I want to know more</span></a>
+                <a class="agreeLink"><span class="button" onclick="acceptCookiePolicy()">I agree</span></a>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>

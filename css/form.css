@@ -262,8 +262,8 @@
 }
 
 .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
-    background-color: #3183d7 !important;
-    border-color: #3183d7;
+    background-color: #00aeef !important;
+    border-color: #00aeef;
     border-style: solid;
     border-width: 1px;
     border-radius: 4px;
@@ -280,8 +280,8 @@
 }
 
 .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-    background-color: #004791 !important;
-    border-color: #004791 !important
+    background-color: #00aeef !important;
+    border-color: #00aeef !important
 }
 
 .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox] {
@@ -361,6 +361,7 @@
 
 .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
     background-color: #231f20 !important;
+    color: #00aeef !important;
 }
 
 .ml-subscribe-close {

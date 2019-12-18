@@ -20,6 +20,82 @@ if (w > h * 1.385) {
     headerHero.classList.toggle('hidden');
 }
 
+// cookie policy
+
+var cookies = document.getElementById('cookies-notice-container');
+
+function closeCookieNotification() {
+    console.log('clicked');
+    // $('#cookies-notice-container').hide();
+    cookies.classList.add('hidden');
+}
+
+function acceptCookiePolicy() {
+    console.log('clicked');
+    // $('#cookies-notice-container').hide();
+    cookies.classList.add('hidden');
+}
+
+// sticky button
+
+var nonStickyButton = document.getElementById('non-sticky-button');
+var nonStickyButton_rect = nonStickyButton.getBoundingClientRect();
+
+var stickyButton = document.getElementById('sticky-button');
+
+var form = document.getElementById('form');
+var form_rect = form.getBoundingClientRect();
+
+var text = document.querySelector('.text-container');
+var text_w = text.offsetWidth;
+
+var stickyButtonLeft = document.querySelectorAll('.sticky-button .left')
+console.log(stickyButtonLeft);
+
+var stickyButtonRight = document.querySelectorAll('.sticky-button .right')
+console.log(stickyButtonRight);
+
+var button = document.getElementById('button');
+var button_w = button.offsetWidth;
+
+// for (var i = 0, )
+// for (var i = 0; i < stickyButtonLeft.length; i++) {
+//     stickyButtonLeft[i].style.width = (button_w) + 'px';
+//     stickyButtonRight[i].style.width = (text_w - button_w - 16) + 'px';
+// }
+
+/*
+<div id="non-sticky-button" class="bg-blue sticky-button">
+                    <div class="text-container">
+                        <div class="left">
+                            <p>Compare this product with others in Product Finder</p>
+                        </div><div class="right">
+                            <div class="button-container">
+                                <a href="#form">
+                                    <span class="button nowrap">call to action</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="sticky-button" class="bg-blue sticky-button">
+                <div class="text-container">
+                    <div class="left">
+                        <p>Compare this product with others in Product Finder</p>
+                    </div><div class="right">
+                        <div class="button-container">
+                            <a href="#form">
+                                <span class="button nowrap">call to action</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+*/
+
+
+
 // iconed ul sizing
 
 var ul_iconed = document.querySelector('.iconed');
@@ -277,16 +353,15 @@ function whichScreen() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    window.addEventListener("scroll", function() {
-        y = window.scrollY;
-        animationContainer_rect = animationContainer.getBoundingClientRect();
-        mobileAnimationContainer_rect = mobileAnimationContainer.getBoundingClientRect();
-        animationUl_h = animationUl.offsetHeight;
-        
-        if (mobileAnimationContainer_rect.width !== 0) {
-            scrollAnimationMobile()
-        } else {
-            scrollAnimationDesktop()
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 2000, function(){
+            window.location.hash = hash;
+            });
         }
     });
 
@@ -308,6 +383,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for (var i = 0; i < li_span.length; i++) {
             li_span[i].style.width = li_span_w + 'px';
+        }
+    });
+
+    window.addEventListener("scroll", function() {
+        y = window.scrollY;
+        nonStickyButton_rect = nonStickyButton.getBoundingClientRect();
+        form_rect = form.getBoundingClientRect();
+        animationContainer_rect = animationContainer.getBoundingClientRect();
+        mobileAnimationContainer_rect = mobileAnimationContainer.getBoundingClientRect();
+        animationUl_h = animationUl.offsetHeight;
+        var z = h - form_rect.y;
+
+        if (nonStickyButton_rect.y > 0) {
+            stickyButton.classList.remove('fixed');
+        } else {
+            stickyButton.classList.add('fixed');
+        }
+    
+        if (z > 0) {
+            var negZ = z * (-1);
+            stickyButton.style.top = negZ + 'px';
+        } else {
+            stickyButton.style.top = 0;
+        }
+
+        if (mobileAnimationContainer_rect.width !== 0) {
+            scrollAnimationMobile()
+        } else {
+            scrollAnimationDesktop()
         }
     });
 

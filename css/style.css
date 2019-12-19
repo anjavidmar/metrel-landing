@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -450,16 +449,6 @@ h3 {
   font-size: 2em;
 }
 
-h5 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 1.125em;
-  margin-bottom: 0.75em;
-}
-
-h6, .h6 {
-  font-size: 0.875em;
-}
-
 p {
   font-size: 1.5em;
   margin-bottom: 0.75em;
@@ -479,7 +468,7 @@ p {
 }
 
 .uppercase {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .text--blue {
@@ -519,7 +508,6 @@ p {
   font-weight: 700;
   line-height: 1.15;
   padding: 0.875em 1em;
-  text-transform: capitalize;
 }
 .button:hover {
   color: #00aeef;
@@ -694,7 +682,7 @@ ul.bulleted li:last-child {
   padding: 1em 0;
 }
 .bg-black--features.features--mobile .n {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #ffffff80;
   border-radius: 12%;
   position: absolute;
   width: 20%;
@@ -898,24 +886,6 @@ footer {
     width: 50%;
   }
 }
-/*
-<footer class="bg-blue">
-            <div class="text-container">
-                <div class="header header--mobile">
-                    <h2><span class="uppercase">we’re here to help</span></h2>
-                    <div class="divider bg-white"></div>
-                </div>
-                <div class="left">
-                    <div class="header header--desktop">
-                        <h2><span class="uppercase">we’re here to help</span></h2>
-                        <div class="divider bg-white"></div>
-                    </div>
-                    <p>
-                        Choosing an appropriate power quality analyser for your application might seem a daunting task. Leave us your details and we will make sure you will get the best tool for the job.
-                    </p>
-                </div><div class="right">
-                    <div class="ml-form-embedContainer ml-subscribe-form">
-*/
 @media screen and (min-width: 710px) {
   .image-container--mobile {
     display: none;

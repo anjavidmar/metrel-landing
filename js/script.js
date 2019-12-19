@@ -22,79 +22,47 @@ if (w > h * 1.385) {
 
 // cookie policy
 
-var cookies = document.getElementById('cookies-notice-container');
+var cookiesContainer = document.getElementById('cookies-notice-container');
+var cookies = localStorage.getItem("cookies");
 
 function closeCookieNotification() {
-    console.log('clicked');
-    // $('#cookies-notice-container').hide();
-    cookies.classList.add('hidden');
+    cookiesContainer.classList.add('hidden');
 }
 
 function acceptCookiePolicy() {
-    console.log('clicked');
-    // $('#cookies-notice-container').hide();
-    cookies.classList.add('hidden');
+    cookiesContainer.classList.add('hidden');
+    localStorage.setItem("cookies", "accepted");
+}
+
+if (cookies === 'accepted') {
+    cookiesContainer.classList.add('hidden');
 }
 
 // sticky button
 
 var nonStickyButton = document.getElementById('non-sticky-button');
 var nonStickyButton_rect = nonStickyButton.getBoundingClientRect();
+var nonStickyButton_rect_typeof = typeof(nonStickyButton_rect.y);
 
 var stickyButton = document.getElementById('sticky-button');
 
 var form = document.getElementById('form');
 var form_rect = form.getBoundingClientRect();
 
-var text = document.querySelector('.text-container');
-var text_w = text.offsetWidth;
+function stickyOnScroll(z) {
+    if (nonStickyButton_rect.y > 0) {
+        stickyButton.classList.remove('fixed');
+    } else {
+        stickyButton.classList.add('fixed');
+    }
 
-var stickyButtonLeft = document.querySelectorAll('.sticky-button .left')
-console.log(stickyButtonLeft);
-
-var stickyButtonRight = document.querySelectorAll('.sticky-button .right')
-console.log(stickyButtonRight);
-
-var button = document.getElementById('button');
-var button_w = button.offsetWidth;
-
-// for (var i = 0, )
-// for (var i = 0; i < stickyButtonLeft.length; i++) {
-//     stickyButtonLeft[i].style.width = (button_w) + 'px';
-//     stickyButtonRight[i].style.width = (text_w - button_w - 16) + 'px';
-// }
-
-/*
-<div id="non-sticky-button" class="bg-blue sticky-button">
-                    <div class="text-container">
-                        <div class="left">
-                            <p>Compare this product with others in Product Finder</p>
-                        </div><div class="right">
-                            <div class="button-container">
-                                <a href="#form">
-                                    <span class="button nowrap">call to action</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div id="sticky-button" class="bg-blue sticky-button">
-                <div class="text-container">
-                    <div class="left">
-                        <p>Compare this product with others in Product Finder</p>
-                    </div><div class="right">
-                        <div class="button-container">
-                            <a href="#form">
-                                <span class="button nowrap">call to action</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-*/
-
-
+    if (z > 0) {
+        var negZ = z * (-1);
+        stickyButton.style.top = negZ + 'px';
+    } else {
+        stickyButton.style.top = 0;
+    }
+}
 
 // iconed ul sizing
 
@@ -123,18 +91,6 @@ var animationNumberedLabel = document.getElementsByClassName('numbered');
 var animationUl = document.querySelector('.animated-ul-container');
 var animationUl_h = animationUl.offsetHeight;
 
-console.log('mobile animationContainer :', mobileAnimationContainer);
-console.log(mobileAnimationContainer_rect);
-console.log('animation Icon :', animationNumberedIcon);
-console.log('animationUl :', animationUl);
-console.log('animation Lable :', animationNumberedLabel);
-console.log('mobile dom rect:', mobileAnimationContainer_rect.bottom, mobileAnimationContainer_rect.height, mobileAnimationContainer_rect.left, mobileAnimationContainer_rect.right, mobileAnimationContainer_rect.top, mobileAnimationContainer_rect.width, mobileAnimationContainer_rect.x, mobileAnimationContainer_rect.y);
-
-console.log('desktop animationContainer :', animationContainer);
-console.log(animationContainer_rect);
-console.log('animationLabel :', animationLabel);
-console.log('desktop dom rect:', animationContainer_rect.bottom, animationContainer_rect.height, animationContainer_rect.left, animationContainer_rect.right, animationContainer_rect.top, animationContainer_rect.width, animationContainer_rect.x, animationContainer_rect.y);
-
 function scrollAnimationMobile() {
     var x = h;
     var y = (mobileAnimationContainer_rect.height + animationUl_h) * (-1);
@@ -158,7 +114,6 @@ function scrollAnimationMobile() {
     var m7_2 = (mobileAnimationContainer_rect.height * (-1)) - (animationUl_h / 9 * 7);
     var m8_2 = (mobileAnimationContainer_rect.height * (-1)) - (animationUl_h / 9 * 8);
     if (mobileAnimationContainer_rect.y > x ) {
-        console.log('transparent');
         for (var i = 0; i < animationNumberedIcon.length; i++) {
             animationNumberedIcon[i].classList.add('transparent');
             animationNumberedIcon[i].classList.remove('opaque');
@@ -166,7 +121,6 @@ function scrollAnimationMobile() {
             animationNumberedLabel[i].classList.remove('opaque');
         }
     } else if (mobileAnimationContainer_rect.y < y) {
-        console.log('transparent again');
         for (var i = 0; i < animationNumberedIcon.length; i++) {
             animationNumberedIcon[i].classList.add('transparent');
             animationNumberedIcon[i].classList.remove('opaque');
@@ -174,7 +128,6 @@ function scrollAnimationMobile() {
             animationNumberedLabel[i].classList.remove('opaque');
         }
     } else {
-        console.log('opaque');
         if (mobileAnimationContainer_rect.y < m0_1 && mobileAnimationContainer_rect.y > m0_2) {
             animationNumberedIcon[0].classList.add('opaque');
             animationNumberedIcon[0].classList.remove('transparent');
@@ -256,19 +209,16 @@ function scrollAnimationDesktop() {
     var l8_2 = (animationContainer_rect.height * (-1)) + (animationContainer_rect.height / 9);
 
     if (animationContainer_rect.y > x) {
-        console.log('transparent');
         for (var i = 0; i < animationLabel.length; i++) {
             animationLabel[i].classList.add('transparent');
             animationLabel[i].classList.remove('opaque');
         }
     } else if (animationContainer_rect.y < y) {
-        console.log('transparent again');
         for (var i = 0; i < animationLabel.length; i++) {
             animationLabel[i].classList.add('transparent');
             animationLabel[i].classList.remove('opaque');
         }
     } else {
-        console.log('opaque');
         if (animationContainer_rect.y < l0_1 && animationContainer_rect.y > l0_2) {
             animationLabel[0].classList.add('opaque');
             animationLabel[0].classList.remove('transparent');
@@ -353,16 +303,11 @@ function whichScreen() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 2000, function(){
-            window.location.hash = hash;
-            });
-        }
+    $('.sticky-scroll-button').on('click', function(event) {
+        var hash = '#form';
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 2000);
     });
 
     window.addEventListener("resize", function() {
@@ -394,18 +339,9 @@ document.addEventListener("DOMContentLoaded", function() {
         mobileAnimationContainer_rect = mobileAnimationContainer.getBoundingClientRect();
         animationUl_h = animationUl.offsetHeight;
         var z = h - form_rect.y;
-
-        if (nonStickyButton_rect.y > 0) {
-            stickyButton.classList.remove('fixed');
-        } else {
-            stickyButton.classList.add('fixed');
-        }
-    
-        if (z > 0) {
-            var negZ = z * (-1);
-            stickyButton.style.top = negZ + 'px';
-        } else {
-            stickyButton.style.top = 0;
+        
+        if (nonStickyButton_rect_typeof === 'number') {
+            stickyOnScroll(z)
         }
 
         if (mobileAnimationContainer_rect.width !== 0) {

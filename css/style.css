@@ -541,7 +541,7 @@ section {
 }
 
 .bg-black {
-  background-color: #231f20;
+  background-color: #211f20;
   color: #fff;
 }
 
@@ -701,22 +701,12 @@ ul.bulleted li:last-child {
   top: 25%;
 }
 .bg-black--features.features--mobile .n-4 {
-  left: 32%;
-  top: 30%;
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  left: 29%;
+  top: 28%;
 }
 .bg-black--features.features--mobile .n-5 {
-  left: 52%;
-  top: 30%;
-  -webkit-transform: translate(-25%, 0);
-  -moz-transform: translate(-25%, 0);
-  -ms-transform: translate(-25%, 0);
-  -o-transform: translate(-25%, 0);
-  transform: translate(-25%, 0);
+  left: 51%;
+  top: 31%;
 }
 .bg-black--features.features--mobile .n-6 {
   right: 0;
@@ -731,8 +721,8 @@ ul.bulleted li:last-child {
   top: 38%;
 }
 .bg-black--features.features--mobile .n-9 {
-  left: 42%;
-  top: 38%;
+  bottom: 31%;
+  right: 64%;
 }
 .bg-black--features.features--mobile .animated-ul-container {
   border-bottom: 1px solid transparent;
@@ -787,8 +777,8 @@ ul.bulleted li:last-child {
 }
 
 .bg-black--gradient {
-  background-color: #231f20;
-  background-image: radial-gradient(#736f70, #3c3839, #231f20);
+  background-color: #211f20;
+  background-image: radial-gradient(#736f70, #3c3839, #211f20);
 }
 .bg-black--gradient .row--desktop {
   display: none;

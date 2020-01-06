@@ -23,7 +23,7 @@ if (w > h * 1.385) {
 // cookie policy
 
 var cookiesContainer = document.getElementById('cookies-notice-container');
-var cookies = localStorage.getItem("cookies");
+var cookies = localStorage.getItem('cookies');
 
 function closeCookieNotification() {
     cookiesContainer.classList.add('hidden');
@@ -31,7 +31,7 @@ function closeCookieNotification() {
 
 function acceptCookiePolicy() {
     cookiesContainer.classList.add('hidden');
-    localStorage.setItem("cookies", "accepted");
+    localStorage.setItem('cookies', 'accepted');
 }
 
 if (cookies === 'accepted') {

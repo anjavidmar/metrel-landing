@@ -362,8 +362,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ml-form-embedSubmit">
-                                            <button type="submit" class="primary">SUBMIT</button>
+                                        <!-- <div class="ml-form-embedSubmit">
+                                            <button id="submit-button" type="submit" class="primary">SUBMIT</button>
+                                        </div> -->
+                                        <div class="ml-form-embedSubmit" style="position: relative;">
+                                            <button id="submit-button" type="submit" class="primary">SUBMIT</button>
+                                            <span id="fake-submit-button" class="button" onclick="alert('Thank you for your inquiry, you will receive an e-mail shortly.');" style="border-radius: 4px; cursor: pointer; font-family: 'Klavika Light', Arial, sans-serif; font-size: 1.125em; left: 0; line-height: 20px; padding: 10px; position: absolute; right: 0; top: 0; width: 100%;">SUBMIT</span>
                                         </div>
                                     </form>
                                 </div>

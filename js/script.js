@@ -23,28 +23,59 @@ if (w > h * 1.385) {
 // cookie policy
 
 var cookiesContainer = document.getElementById('cookies-notice-container');
+var cookiesPopUp = document.getElementById('cookies-pop-up');
+var cookiesPopUpLink = document.querySelector('.moreLink');
+var cookiesPopUpButton = document.querySelector('.moreLink >.button');
 var cookies = localStorage.getItem('cookies');
+var checkCookiesNoticeHidden = false;
+var checkCookiesPopUpShown = false;
 
 function closeCookieNotification() {
     cookiesContainer.classList.add('hidden');
+    checkCookiesNoticeHidden = true;
+    cookiesPopUp.style.bottom = 5 + 'px';
 }
 
 function acceptCookiePolicy() {
     cookiesContainer.classList.add('hidden');
+    checkCookiesNoticeHidden = true;
+    cookiesPopUp.style.bottom = 5 + 'px';
     localStorage.setItem('cookies', 'accepted');
+    acceptCookiesAndClosePopUp();
 }
 
 if (cookies === 'accepted') {
-    cookiesContainer.classList.add('hidden');
+    cookiesContainer.classList.add('cookies-accepted');
+    checkCookiesNoticeHidden = true;
+    cookiesPopUp.classList.add('cookies-accepted');
+    checkCookiesPopUpShown = false;
 }
 
 function openCookiePopUp() {
-    console.log('open');
-    
+    var text = "Close information pop-up";
+    var cookiesContainer_h = cookiesContainer.offsetHeight;
+    cookiesPopUp.style.bottom = (cookiesContainer_h + 2) + 'px';
+    cookiesPopUp.classList.add('smooth-transition');
+    cookiesPopUp.classList.add('show');
+    checkCookiesPopUpShown = true;
+    cookiesPopUpButton.innerHTML = text;
+    cookiesPopUpLink.setAttribute('onclick','closeCookiePopUp()');
 }
+
 function closeCookiePopUp() {
-    console.log('close');
-    
+    var text = "I want to know more";
+    cookiesPopUp.classList.remove('show');
+    checkCookiesPopUpShown = false;
+    cookiesPopUpButton.innerHTML = text;
+    cookiesPopUpLink.setAttribute('onclick','openCookiePopUp()');
+}
+
+function acceptCookiesAndClosePopUp() {
+    closeCookiePopUp();
+    setTimeout(function () {
+        cookiesContainer.classList.add('cookies-accepted');
+        cookiesPopUp.classList.add('cookies-accepted');
+    }, 2000);
 }
 
 // sticky button
@@ -348,6 +379,15 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             header.style.height = 'auto';
             headerHero.classList.remove('hidden');
+        }
+
+        if (checkCookiesPopUpShown) {
+            if (checkCookiesNoticeHidden) {
+                cookiesPopUp.style.bottom = 5 + 'px';
+            } else {
+                var cookiesContainer_h = cookiesContainer.offsetHeight;
+                cookiesPopUp.style.bottom = (cookiesContainer_h + 2) + 'px';
+            }
         }
 
         if (w > 849) {

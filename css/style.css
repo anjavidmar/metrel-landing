@@ -145,10 +145,6 @@ textarea {
   font-weight: normal;
   font-style: normal;
 }
-html {
-  background-color: #00aeef;
-}
-
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

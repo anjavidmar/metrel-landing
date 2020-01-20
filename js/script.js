@@ -12,7 +12,7 @@ console.log('site height = ' + site_h, 'site width = ' + site_w);
 
 // header sizing
 
-var loading = document.getElementById('loading-container')
+var loading = document.getElementById('loading-container');
 var header = document.getElementById('header');
 var headerHero = document.getElementsByClassName('header-hero-spaceholder');
 

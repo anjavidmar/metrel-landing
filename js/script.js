@@ -472,5 +472,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     changeScreen (m, n, o, p)
 
-    setInterval(whichScreen, 5000);
+    setInterval(whichScreen, 3500);
 });

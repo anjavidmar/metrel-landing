@@ -175,7 +175,7 @@ p {
   line-height: 1.25;
 }
 
-a.pointer {
+a.pointer, .sticky-scroll-button {
   cursor: pointer;
 }
 

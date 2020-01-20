@@ -145,6 +145,10 @@ textarea {
   font-weight: normal;
   font-style: normal;
 }
+html {
+  background-color: #00aeef;
+}
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -156,6 +160,7 @@ img {
 }
 
 body {
+  background-color: #00aeef;
   color: #000;
   font-family: "Klavika Light", Arial, sans-serif;
 }
@@ -240,10 +245,62 @@ a.pointer {
   color: #00aeef;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+#loading-container {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -101;
+}
+#loading-container img {
+  display: block;
+}
+#loading-container img.hidden {
+  display: none;
+}
+#loading-container .loading-box {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+}
+#loading-container .circle-border {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 50%;
+  background: #fff;
+  background: linear-gradient(0deg, #ffffff1a 33%, #ffffff 100%);
+  animation: spin 1.5s linear 0s infinite;
+}
+#loading-container .circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #00aeef;
+  border-radius: 50%;
+}
+
 .parallax-mirror {
   background-color: #000;
 }
 
+header {
+  position: relative;
+}
 header img {
   display: block;
   max-height: 100vh;
@@ -524,12 +581,18 @@ ul.bulleted li:last-child {
   max-width: 275px;
   width: 100%;
 }
-.bg-black--gradient p {
+.bg-black--gradient .lead-description-container {
   margin-bottom: 1.25em;
+}
+.bg-black--gradient p {
+  margin-bottom: 0;
 }
 
 footer {
   padding: 2.75em 0 0.75em;
+}
+footer #form > .hidden {
+  display: none;
 }
 
 #cookies-notice-container {

@@ -13,17 +13,20 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/form.css" />
-    <style>
-        html {
-            background-color: #00aeef;
-        }
-    </style>
 </head>
 <body>
+    <div id="loading-container" class="animated">
+        <img class="header-hero-spaceholder" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
+        <div class="loading-box">
+            <div class="circle-border">
+                <div class="circle-core"></div>
+            </div>  
+        </div>
+    </div>
     <div class="site">
         <header id="header" class="parallax-container" data-parallax="scroll" data-speed="0.5"
             data-image-src="./assets/images/power-analysers.jpg">
-            <img id="header-hero" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
+            <img class="header-hero-spaceholder" src="./assets/images/power-analysers-spaceholder.png" alt="metrel power quality analysers" />
         </header>
         <main>
             <section class="bg-blue bg-blue--intro">
@@ -249,9 +252,11 @@
                                 <div class="image-container image-container--line-up">
                                     <img src="./assets/images/2892.png" alt="MI 2892 Power Master" />
                                 </div>
-                                <p class="lead-description">
-                                    The most advanced model that offers a number of advanced features, including transient recording and VFD (variable frequency drive) measurements.
-                                </p>
+                                <div class="lead-description-container">
+                                    <p class="lead-description">
+                                        The most advanced model that offers a number of advanced features, including transient recording and VFD (variable frequency drive) measurements.
+                                    </p>
+                                </div>
                                 <ul class="bulleted text--blue">
                                     <li><span class="text--white">Accuracy <span class="nowrap">IEC 61000-4-30</span> Class A <span class="nowrap">0.1 %</span></span></li>
                                     <li><span class="text--white">Power measurements fully compliant with <span class="nowrap">IEEE 1459</span> and classic (vector or arithmetic) method</span></li>
@@ -277,9 +282,11 @@
                                 <div class="image-container image-container--line-up">
                                     <img src="./assets/images/2885.png" alt="MI 2885 Master Q4" />
                                 </div>
-                                <p class="lead-description">
-                                    An intermediary model with a nearly identical array of features as MI 2892 Power Master, sans transient recording functionality.
-                                </p>
+                                <div class="lead-description-container">
+                                    <p class="lead-description">
+                                        An intermediary model with a nearly identical array of features as MI 2892 Power Master, sans transient recording functionality.
+                                    </p>
+                                </div>
                                 <ul class="bulleted text--blue">
                                     <li><span class="text--white">Accuracy <span class="nowrap">IEC 61000-4-30</span> Class A <span class="nowrap">0.1 %</spanspan></span></li>
                                     <li><span class="text--white">Power measurements fully compliant with <span class="nowrap">IEEE 1459</span> and classic (vector or arithmetic) method</span></li>
@@ -304,9 +311,11 @@
                                 <div class="image-container image-container--line-up">
                                     <img src="./assets/images/2883.png" alt="MI 2883 Energy Master" />
                                 </div>
-                                <p class="lead-description">
-                                    The basic model with excellent price/performance value, designed primarily for long term recording at remote sites and basic power quality troubleshooting.
-                                </p>
+                                <div class="lead-description-container">
+                                    <p class="lead-description">
+                                        The basic model with excellent price/performance value, designed primarily for long term recording at remote sites and basic power quality troubleshooting.
+                                    </p>
+                                </div>
                                 <ul class="bulleted text--blue">
                                     <li><span class="text--white">Accuracy <span class="nowrap">IEC 61000-4-30</span> Class S 0.2&nbsp;%</span></li>
                                     <li><span class="text--white">Power measurements fully compliant with <span class="nowrap">IEEE 1459</span> and classic (vector or arithmetic) method</span></li>
@@ -338,15 +347,24 @@
                     <p>
                         Choosing an appropriate power quality analyser for your application might seem a daunting task. Leave us your details and we will make sure you will get the best tool for the job.
                     </p>
-                </div><div class="right">
-                    <div id="mlb2-1705168" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1705168">
+                </div><div id="form" class="right">
+                    <div id="initial-form" class="ml-form-embedContainer ml-subscribe-form">
                         <div class="ml-form-align-center">
                             <div class="ml-form-embedWrapper embedForm">
                                 <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                                     <div class="ml-form-embedContent" style="margin-bottom:0"></div>
-                                    <form id="form" class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/p3z9g2"
-                                        data-code="p3z9g2" method="post" target="_blank">
+                                    <form class="ml-block-form">
                                         <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-country">
+                                                    <select id="select-country" required>
+                                                        <option class="placeholder--country" value="" disabled selected hidden>Country...</option>
+                                                        <option class="visible-option" value="DK">Denmark</option>
+                                                        <option class="visible-option" value="NO">Norway</option>
+                                                        <option class="visible-option" value="SE">Sweden</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="ml-form-fieldRow">
                                                 <div class="ml-field-group ml-field-name">
                                                     <input type="text" class="form-control" data-inputmask="" name="fields[name]"
@@ -357,16 +375,6 @@
                                                 <div class="ml-field-group ml-field-company">
                                                     <input type="text" class="form-control" data-inputmask="" name="fields[company]"
                                                         placeholder="Company..." autocomplete="">
-                                                </div>
-                                            </div>
-                                            <div class="ml-form-fieldRow">
-                                                <div class="ml-field-group ml-field-country">
-                                                    <select required>
-                                                        <option class="placeholder--country" value="" disabled selected hidden>Country...</option>
-                                                        <option class="visible-option" value="denmark">Denmark</option>
-                                                        <option class="visible-option" value="norway">Norway</option>
-                                                        <option class="visible-option" value="sweden">Sweden</option>
-                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="ml-form-fieldRow">
@@ -405,6 +413,208 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- DENMARK -->
+                    <div id="mlb2-1705168" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1705168 hidden">
+                        <div class="ml-form-align-center">
+                            <div class="ml-form-embedWrapper embedForm">
+                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                    <div class="ml-form-embedContent" style="margin-bottom:0"></div>
+                                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/p3z9g2"
+                                        data-code="p3z9g2" method="post" target="_blank">
+                                        <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-country">
+                                                    <select required>
+                                                        <option class="visible-option" value="DK" selected>Denmark</option>
+                                                        <option class="visible-option" value="NO">Norway</option>
+                                                        <option class="visible-option" value="SE">Sweden</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-name">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[name]"
+                                                        placeholder="Name..." autocomplete="name">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-company">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[company]"
+                                                        placeholder="Company..." autocomplete="">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                    <input type="email" class="form-control" data-inputmask="" name="fields[email]"
+                                                        placeholder="Email..." autocomplete="email">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow ml-last-item">
+                                                <div class="ml-field-group ml-field-phone ml-validate-required">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[phone]"
+                                                        placeholder="Telephone Number..." autocomplete="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="ml-submit" value="1">
+                                        <div class="ml-form-embedSubmit">
+                                            <button type="submit" class="primary">SUBMIT</button>
+                                            <button disabled="disabled" style="display:none" type="button" class="loading">
+                                                <div class="ml-form-embedSubmitLoad">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="ml-form-successBody row-success" style="display:none">
+                                    <div class="ml-form-successContent">
+                                        <h4>Thank you!</h4>
+                                        <p>Thank you for your inquiry, You will receive an e-mail</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NORWAY -->
+                    <div id="mlb2-1726052" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1726052 hidden">
+                        <div class="ml-form-align-center">
+                            <div class="ml-form-embedWrapper embedForm">
+                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                    <div class="ml-form-embedContent" style="margin-bottom:0"></div>
+                                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/h0r2m2"
+                                        data-code="h0r2m2" method="post" target="_blank">
+                                        <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-country">
+                                                    <select required>
+                                                        <option class="visible-option" value="DK">Denmark</option>
+                                                        <option class="visible-option" value="NO" selected>Norway</option>
+                                                        <option class="visible-option" value="SE">Sweden</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-name">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[name]"
+                                                        placeholder="Name..." autocomplete="name">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-company">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[company]"
+                                                        placeholder="Company..." autocomplete="">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                    <input type="email" class="form-control" data-inputmask="" name="fields[email]"
+                                                        placeholder="Email..." autocomplete="email">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow ml-last-item">
+                                                <div class="ml-field-group ml-field-phone ml-validate-required">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[phone]"
+                                                        placeholder="Telephone Number..." autocomplete="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="ml-submit" value="1">
+                                        <div class="ml-form-embedSubmit">
+                                            <button type="submit" class="primary">SUBMIT</button>
+                                            <button disabled="disabled" style="display:none" type="button" class="loading">
+                                                <div class="ml-form-embedSubmitLoad">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="ml-form-successBody row-success" style="display:none">
+                                    <div class="ml-form-successContent">
+                                        <h4>Thank you!</h4>
+                                        <p>Thank you for your inquiry, You will receive an e-mail</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SWEDEN -->
+                    <div id="mlb2-1726066" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1726066 hidden">
+                        <div class="ml-form-align-center">
+                            <div class="ml-form-embedWrapper embedForm">
+                                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                    <div class="ml-form-embedContent" style="margin-bottom:0"></div>
+                                    <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/d9z7j5"
+                                        data-code="d9z7j5" method="post" target="_blank">
+                                        <div class="ml-form-formContent">
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-country">
+                                                    <select required>
+                                                        <option class="visible-option" value="DK">Denmark</option>
+                                                        <option class="visible-option" value="NO">Norway</option>
+                                                        <option class="visible-option" value="SE" selected>Sweden</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-name">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[name]"
+                                                        placeholder="Name..." autocomplete="name">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-company">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[company]"
+                                                        placeholder="Company..." autocomplete="">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow">
+                                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                    <input type="email" class="form-control" data-inputmask="" name="fields[email]"
+                                                        placeholder="Email..." autocomplete="email">
+                                                </div>
+                                            </div>
+                                            <div class="ml-form-fieldRow ml-last-item">
+                                                <div class="ml-field-group ml-field-phone ml-validate-required">
+                                                    <input type="text" class="form-control" data-inputmask="" name="fields[phone]"
+                                                        placeholder="Telephone Number..." autocomplete="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="ml-submit" value="1">
+                                        <div class="ml-form-embedSubmit">
+                                            <button type="submit" class="primary">SUBMIT</button>
+                                            <button disabled="disabled" style="display:none" type="button" class="loading">
+                                                <div class="ml-form-embedSubmitLoad">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="ml-form-successBody row-success" style="display:none">
+                                    <div class="ml-form-successContent">
+                                        <h4>Thank you!</h4>
+                                        <p>Thank you for your inquiry, You will receive an e-mail</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </footer>
@@ -440,9 +650,24 @@
     <script type="text/javascript" src="./js/parallax.min.js"></script>
     <script>
         function ml_webform_success_1705168() { var r = ml_jQuery || jQuery; r(".ml-subscribe-form-1705168 .row-success").show(), r(".ml-subscribe-form-1705168 .row-form").hide() }
+
+        function ml_webform_success_1726052() { var r = ml_jQuery || jQuery; r(".ml-subscribe-form-1726052 .row-success").show(), r(".ml-subscribe-form-1726052 .row-form").hide() }
+
+        function ml_webform_success_1726066() { var r = ml_jQuery || jQuery; r(".ml-subscribe-form-1726066 .row-success").show(), r(".ml-subscribe-form-1726066 .row-form").hide() }
     </script>
-    <img src="https://track.mailerlite.com/webforms/o/1705168/p3z9g2?v4a60e9ef938a7fa0240ac9ba567062cb" width="1" height="1"
-        style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="." border="0">
+    <img src="https://track.mailerlite.com/webforms/o/1705168/p3z9g2?v4a60e9ef938a7fa0240ac9ba567062cb" width="1"
+        height="1" style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="."
+        border="0" />
+    <img src="https://track.mailerlite.com/webforms/o/1726052/h0r2m2?v4a60e9ef938a7fa0240ac9ba567062cb" width="1"
+        height="1" style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="."
+        border="0" />
+    <img src="https://track.mailerlite.com/webforms/o/1726066/d9z7j5?v4a60e9ef938a7fa0240ac9ba567062cb" width="1"
+        height="1" style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="."
+        border="0">
+    <script src="https://static.mailerlite.com/js/w/webforms.min.js?v4a60e9ef938a7fa0240ac9ba567062cb"
+        type="text/javascript"></script>
+    <script src="https://static.mailerlite.com/js/w/webforms.min.js?v4a60e9ef938a7fa0240ac9ba567062cb"
+        type="text/javascript"></script>
     <script src="https://static.mailerlite.com/js/w/webforms.min.js?v4a60e9ef938a7fa0240ac9ba567062cb"
         type="text/javascript"></script>
     <script type="text/javascript" src="./js/script.js"></script>

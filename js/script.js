@@ -12,12 +12,16 @@ console.log('site height = ' + site_h, 'site width = ' + site_w);
 
 // header sizing
 
+var loading = document.getElementById('loading-container')
 var header = document.getElementById('header');
-var headerHero = document.getElementById('header-hero');
+var headerHero = document.getElementsByClassName('header-hero-spaceholder');
 
 if (w > h * 1.385) {
+    loading.style.height = h + 'px';
     header.style.height = h + 'px';
-    headerHero.classList.toggle('hidden');
+    for (let i = 0; i < headerHero.length; i++) {
+        headerHero[i].classList.add('hidden');
+    }
 }
 
 // cookie policy
@@ -88,6 +92,38 @@ var stickyButton = document.getElementById('sticky-button');
 
 var form = document.getElementById('form');
 var form_rect = form.getBoundingClientRect();
+
+var select = document.getElementsByTagName('select');
+var initialForm = document.getElementById('initial-form');
+var formDK = document.getElementById('mlb2-1705168');
+var formNO = document.getElementById('mlb2-1726052');
+var formSE = document.getElementById('mlb2-1726066');
+
+$("select").change(function(){
+    var selectedCountry = $(this).children("option:selected").val();
+    initialForm.classList.add('hidden');
+    if (selectedCountry === "DK") {
+        formDK.classList.remove('hidden');
+        formDK.value = "DK";
+        formNO.classList.add('hidden');
+        formSE.classList.add('hidden');
+    } else if (selectedCountry === 'NO') {
+        formNO.classList.remove('hidden');
+        formNO.value = "NO";
+        formDK.classList.add('hidden');
+        formSE.classList.add('hidden');
+    } else if (selectedCountry === 'SE') {
+        formSE.classList.remove('hidden');
+        formSE.classList.remove('hidden');
+        formDK.classList.add('hidden');
+        formNO.classList.add('hidden');
+    } else {
+        initialForm.classList.remove('hidden');
+        formDK.classList.add('hidden');
+        formNO.classList.add('hidden');
+        formSE.classList.add('hidden');
+    }
+});
 
 function stickyOnScroll(z) {
     if (nonStickyButton_rect.y > 0) {
@@ -341,15 +377,18 @@ function whichScreen() {
 
 // line up sizing
 
+var lead_description_container = document.getElementsByClassName('lead-description-container');
 var lead_description = document.getElementsByClassName('lead-description');
 var lead_description2_h = lead_description[2].offsetHeight;
 
 if (w > 849) {
-    lead_description[0].style.height = lead_description2_h + 'px';
-    lead_description[1].style.height = lead_description2_h + 'px';
+    lead_description_container[0].style.height = lead_description2_h + 'px';
+    lead_description_container[1].style.height = lead_description2_h + 'px';
+    lead_description_container[2].style.height = lead_description2_h + 'px';
 } else {
-    lead_description[0].style.height = 'auto';
-    lead_description[1].style.height = 'auto';
+    lead_description_container[0].style.height = 'auto';
+    lead_description_container[1].style.height = 'auto';
+    lead_description_container[2].style.height = 'auto';
 }
 
 // ongoing:
@@ -374,11 +413,17 @@ document.addEventListener("DOMContentLoaded", function() {
         lead_description2_h = lead_description[2].offsetHeight;
 
         if (w > h * 1.385) {
+            loading.style.height = h + 'px';
             header.style.height = h + 'px';
-            headerHero.classList.add('hidden');
+            for (let i = 0; i < headerHero.length; i++) {
+                headerHero[i].classList.add('hidden');
+            }
         } else {
-            header.style.height = 'auto';
-            headerHero.classList.remove('hidden');
+            loading.style.height  = 'auto';
+            header.style.height  = 'auto';
+            for (let i = 0; i < headerHero.length; i++) {
+                headerHero[i].classList.remove('hidden');
+            }
         }
 
         if (checkCookiesPopUpShown) {
@@ -391,11 +436,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (w > 849) {
-            lead_description[0].style.height = lead_description2_h + 'px';
-            lead_description[1].style.height = lead_description2_h + 'px';
+            lead_description_container[0].style.height = lead_description2_h + 'px';
+            lead_description_container[1].style.height = lead_description2_h + 'px';
+            lead_description_container[2].style.height = lead_description2_h + 'px';
         } else {
-            lead_description[0].style.height = 'auto';
-            lead_description[1].style.height = 'auto';
+            lead_description_container[0].style.height = 'auto';
+            lead_description_container[1].style.height = 'auto';
+            lead_description_container[2].style.height = 'auto';
         }
 
         for (var i = 0; i < li_span.length; i++) {

@@ -7,8 +7,8 @@ var site = document.querySelector('.site');
 var site_h = site.offsetHeight;
 var site_w = site.offsetWidth;
 
-console.log('screen height = ' + h, 'screen width = ' + w);
-console.log('site height = ' + site_h, 'site width = ' + site_w);
+// console.log('screen height = ' + h, 'screen width = ' + w);
+// console.log('site height = ' + site_h, 'site width = ' + site_w);
 
 // header sizing
 
